@@ -538,9 +538,7 @@ PPU.prototype = {
       }
     }
 
-    if (this.nes.opts.showDisplay) {
-      this.nes.ui.writeFrame(buffer);
-    }
+    this.nes.ui.writeFrame(buffer);
   },
 
   updateControlReg1: function(value) {
