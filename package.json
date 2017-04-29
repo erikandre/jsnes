@@ -2,6 +2,7 @@
   "name": "jsnes",
   "version": "0.1.0",
   "description": "A JavaScript NES emulator",
+  "main": "dist/jsnes.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/bfirsh/jsnes.git"
@@ -9,6 +10,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "webpack",
+    "prepublish": "npm run build",
     "test": "mocha --compilers js:babel-core/register ./test/*.spec.js",
     "test:watch": "mocha -w --compilers js:babel-core/register ./test/*.spec.js"
   },
