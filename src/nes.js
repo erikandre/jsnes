@@ -7,7 +7,7 @@ import ROM from "./rom";
 export default function NES(opts) {
   this.opts = {
     onFrame: function() {},
-    onAudio: null,
+    onAudio: function() {},
     onStatusUpdate: function() {},
 
     preferredFrameRate: 60,
