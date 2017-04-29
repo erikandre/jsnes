@@ -1,7 +1,7 @@
-var assert = require("chai").assert;
-var fs = require("fs");
-var NES = require("../src/nes");
-var sinon = require("sinon");
+import { assert } from "chai";
+import fs from "fs";
+import NES from "../src/nes";
+import sinon from "sinon";
 
 describe("NES", function() {
   it("can be initialized", function() {

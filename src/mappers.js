@@ -1,6 +1,7 @@
-var utils = require('./utils');
+import { copyArrayElements } from "./utils";
 
 var Mappers = {};
+export default Mappers;
 
 Mappers[0] = function(nes) {
   this.nes = nes;
@@ -377,7 +378,7 @@ Mappers[0].prototype = {
       var ram = this.nes.rom.batteryRam;
       if (ram !== null && ram.length === 0x2000) {
         // Load Battery RAM into memory:
-        utils.copyArrayElements(ram, 0, this.nes.cpu.mem, 0x6000, 0x2000);
+        copyArrayElements(ram, 0, this.nes.cpu.mem, 0x6000, 0x2000);
       }
     }
   },
@@ -387,7 +388,7 @@ Mappers[0].prototype = {
     bank %= this.nes.rom.romCount;
     //var data = this.nes.rom.rom[bank];
     //cpuMem.write(address,data,data.length);
-    utils.copyArrayElements(
+    copyArrayElements(
       this.nes.rom.rom[bank],
       0,
       this.nes.cpu.mem,
@@ -402,7 +403,7 @@ Mappers[0].prototype = {
     }
     this.nes.ppu.triggerRendering();
 
-    utils.copyArrayElements(
+    copyArrayElements(
       this.nes.rom.vrom[bank % this.nes.rom.vromCount],
       0,
       this.nes.ppu.vramMem,
@@ -411,13 +412,7 @@ Mappers[0].prototype = {
     );
 
     var vromTile = this.nes.rom.vromTile[bank % this.nes.rom.vromCount];
-    utils.copyArrayElements(
-      vromTile,
-      0,
-      this.nes.ppu.ptTile,
-      address >> 4,
-      256
-    );
+    copyArrayElements(vromTile, 0, this.nes.ppu.ptTile, address >> 4, 256);
   },
 
   load32kRomBank: function(bank, address) {
@@ -446,7 +441,7 @@ Mappers[0].prototype = {
 
     var bank4k = Math.floor(bank1k / 4) % this.nes.rom.vromCount;
     var bankoffset = bank1k % 4 * 1024;
-    utils.copyArrayElements(
+    copyArrayElements(
       this.nes.rom.vrom[bank4k],
       0,
       this.nes.ppu.vramMem,
@@ -470,7 +465,7 @@ Mappers[0].prototype = {
 
     var bank4k = Math.floor(bank2k / 2) % this.nes.rom.vromCount;
     var bankoffset = bank2k % 2 * 2048;
-    utils.copyArrayElements(
+    copyArrayElements(
       this.nes.rom.vrom[bank4k],
       bankoffset,
       this.nes.ppu.vramMem,
@@ -491,7 +486,7 @@ Mappers[0].prototype = {
     var offset = bank8k % 2 * 8192;
 
     //this.nes.cpu.mem.write(address,this.nes.rom.rom[bank16k],offset,8192);
-    utils.copyArrayElements(
+    copyArrayElements(
       this.nes.rom.rom[bank16k],
       offset,
       this.nes.cpu.mem,
@@ -1355,5 +1350,3 @@ Mappers[66].prototype.write = function(address, value) {
     this.load8kVromBank((value & 3) * 2, 0x0000);
   }
 };
-
-module.exports = Mappers;

@@ -1,5 +1,6 @@
 {
   "eqeqeq": true,
+  "esversion": 6,
   "globals": {
     "console": true,
     "module": true,

@@ -14,14 +14,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /(\.jsx|\.js)$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.js$/,
         enforce: "pre",
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "jshint-loader"
-          }
-        ]
+        loader: "jshint-loader"
       }
     ]
   },

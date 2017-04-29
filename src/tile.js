@@ -1,5 +1,4 @@
-
-var Tile = function() {
+export default function Tile() {
   // Tile data:
   this.pix = new Array(64);
 
@@ -16,7 +15,7 @@ var Tile = function() {
   this.c = null;
   this.initialized = false;
   this.opaque = new Array(8);
-};
+}
 
 Tile.prototype = {
   setBuffer: function(scanline) {
@@ -195,5 +194,3 @@ Tile.prototype = {
     this.pix = s.pix;
   }
 };
-
-module.exports = Tile;

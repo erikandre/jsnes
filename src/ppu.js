@@ -1,7 +1,7 @@
-var Tile = require('./tile');
-var utils = require('./utils');
+import Tile from "./tile";
+import { toJSON, fromJSON } from "./utils";
 
-var PPU = function(nes) {
+export default function PPU(nes) {
   this.nes = nes;
 
   // Keep Chrome happy
@@ -78,7 +78,7 @@ var PPU = function(nes) {
   this.clipToTvSize = true;
 
   this.reset();
-};
+}
 
 PPU.prototype = {
   // Status flags:
@@ -1496,7 +1496,7 @@ PPU.prototype = {
 
   toJSON: function() {
     var i;
-    var state = utils.toJSON(this);
+    var state = toJSON(this);
 
     state.nameTable = [];
     for (i = 0; i < this.nameTable.length; i++) {
@@ -1514,7 +1514,7 @@ PPU.prototype = {
   fromJSON: function(state) {
     var i;
 
-    utils.fromJSON(this, state);
+    fromJSON(this, state);
 
     for (i = 0; i < this.nameTable.length; i++) {
       this.nameTable[i].fromJSON(state.nameTable[i]);
@@ -1748,5 +1748,3 @@ PaletteTable.prototype = {
     this.setEmphasis(0);
   }
 };
-
-module.exports = PPU;

@@ -1,5 +1,4 @@
-// Keyboard events are bound in the UI
-var Keyboard = function() {
+export default function Keyboard() {
   var i;
 
   this.keys = {
@@ -21,7 +20,7 @@ var Keyboard = function() {
   for (i = 0; i < this.state2.length; i++) {
     this.state2[i] = 0x40;
   }
-};
+}
 
 Keyboard.prototype = {
   setKey: function(key, value) {
@@ -117,5 +116,3 @@ Keyboard.prototype = {
     evt.preventDefault();
   }
 };
-
-module.exports = Keyboard;

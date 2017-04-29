@@ -1,6 +1,6 @@
-var utils = require("./utils");
+import { toJSON, fromJSON } from "./utils";
 
-var CPU = function(nes) {
+export default function CPU(nes) {
   this.nes = nes;
 
   // Keep Chrome happy
@@ -30,7 +30,7 @@ var CPU = function(nes) {
   this.irqType = null;
 
   this.reset();
-};
+}
 
 CPU.prototype = {
   // IRQ Types
@@ -1181,11 +1181,11 @@ CPU.prototype = {
   ],
 
   toJSON: function() {
-    return utils.toJSON(this);
+    return toJSON(this);
   },
 
   fromJSON: function(s) {
-    utils.fromJSON(this, s);
+    fromJSON(this, s);
   }
 };
 
@@ -1657,5 +1657,3 @@ OpData.prototype = {
       ((cycles & 0xff) << 24);
   }
 };
-
-module.exports = CPU;

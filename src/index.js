@@ -1,1 +1,2 @@
-module.exports.NES = require('./nes');
+import NES from "./nes";
+export { NES };

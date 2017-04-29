@@ -1,10 +1,10 @@
-var CPU = require("./cpu");
-var Keyboard = require("./keyboard");
-var PPU = require("./ppu");
-var PAPU = require("./papu");
-var ROM = require("./rom");
+import CPU from "./cpu";
+import Keyboard from "./keyboard";
+import PAPU from "./papu";
+import PPU from "./ppu";
+import ROM from "./rom";
 
-var NES = function(opts) {
+export default function NES(opts) {
   this.opts = {
     onFrame: function() {},
     onAudio: null,
@@ -38,7 +38,7 @@ var NES = function(opts) {
   this.keyboard = new Keyboard();
 
   this.ui.updateStatus("Ready to load a ROM.");
-};
+}
 
 NES.prototype = {
   fpsFrameCount: 0,
@@ -171,5 +171,3 @@ NES.prototype = {
     this.ppu.fromJSON(s.ppu);
   }
 };
-
-module.exports = NES;
