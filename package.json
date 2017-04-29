@@ -9,8 +9,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "webpack",
-    "test": "mocha --colors ./test/*.spec.js",
-    "test:watch": "mocha --colors -w ./test/*.spec.js"
+    "test": "mocha ./test/*.spec.js",
+    "test:watch": "mocha -w ./test/*.spec.js"
   },
   "devDependencies": {
     "chai": "^3.5.0",
