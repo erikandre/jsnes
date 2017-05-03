@@ -38,6 +38,8 @@ export default function NES(opts) {
   this.keyboard = new Keyboard();
 
   this.ui.updateStatus("Ready to load a ROM.");
+
+  this.frame = this.frame.bind(this);
 }
 
 NES.prototype = {
