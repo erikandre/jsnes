@@ -3,7 +3,7 @@ JSNES
 
 A JavaScript NES emulator.
 
-It is a library for creating emulators for both the browser and Node.js. It doesn't come with a UI, but see jsnes-ui for the browser UI used on [https://jsnes.fir.sh/]().
+It is a library for creating emulators for both the browser and Node.js. It doesn't come with a UI, but see [jsnes-web](https://github.com/bfirsh/jsnes-web) for the browser UI used on [https://jsnes.fir.sh/]().
 
 Installation
 ------------
