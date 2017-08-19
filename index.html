@@ -41,6 +41,12 @@
                     ],
                     "Working": [
                         ['Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
+                        ['Ice Climber', 'local-roms/Ice Climber (U).nes'],
+                        ['Bubble Bobble', 'local-roms/Bubble Bobble (E).nes'],
+                        ['Tetris', 'local-roms/Tetris (U).nes'],
+                        ['Contra', 'local-roms/Contra (U) [!].nes'],
+                        ['Ninja Gaiden', 'local-roms/Ninja Gaiden (U).nes'],
+                        ['1942', 'local-roms/1942 (PC10).nes'],
                     ],
                 })
             });
@@ -52,6 +58,12 @@
                     ],
                     "Working": [
                         ['Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
+                        ['Ice Climber', 'local-roms/Ice Climber (U).nes'],
+                        ['Bubble Bobble', 'local-roms/Bubble Bobble (E).nes'],
+                        ['Tetris', 'local-roms/Tetris (U).nes'],
+                        ['Contra', 'local-roms/Contra (U) [!].nes'],
+                        ['Ninja Gaiden', 'local-roms/Ninja Gaiden (U).nes'],
+                        ['1942', 'local-roms/1942 (PC10).nes'],
                     ],
                 })
             });
@@ -61,7 +73,8 @@
             const socket2 = connectSocket(nes2, 'emu-2');
 
             function connectSocket(nes, name) {
-              var socket = io("http://localhost:3000");
+              //var socket = io("http://localhost:3000");
+              var socket = io("http://ec2-35-176-154-104.eu-west-2.compute.amazonaws.com/");
               socket.on('input', function(msg){
                 var button = 0;
                 switch (~~msg.button) {
