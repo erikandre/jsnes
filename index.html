@@ -64,15 +64,15 @@
               var socket = io("http://localhost:3000");
               socket.on('input', function(msg){
                 var button = 0;
-                switch (msg.button) {
-                  case '0': button = 88; break; // A
-                  case '1': button = 90; break; // B
-                  case '2': button = 37; break; // Left
-                  case '3': button = 39; break; // Right
-                  case '4': button = 38; break; // Up
-                  case '5': button = 40; break; // Down
-                  case '6': button = 17; break; // Select
-                  case '7': button = 13; break; // Start
+                switch (~~msg.button) {
+                  case 0: button = 88; break; // A
+                  case 1: button = 90; break; // B
+                  case 2: button = 37; break; // Left
+                  case 3: button = 39; break; // Right
+                  case 4: button = 38; break; // Up
+                  case 5: button = 40; break; // Down
+                  case 6: button = 17; break; // Select
+                  case 7: button = 13; break; // Start
                 }
                 var event = {
                   'keyCode': button
