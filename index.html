@@ -2,20 +2,50 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>JSNES: A JavaScript NES emulator</title>
+    <title>Retro Championship</title>
+    <style>
+    @font-face {
+      font-family: Retro;
+      src: url(8bit.ttf);
+      font-weight: bold;
+    }
+
+    div {
+      margin-bottom: 5px;
+      font-family: Retro;
+    }
+    </style>
+    <link rel="apple-touch-icon" sizes="57x57" href="/fav.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/fav.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/fav.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/fav.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/fav.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/fav.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/fav.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/fav.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/fav.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/fav.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav.ico/favicon-16x16.png">
+    <link rel="manifest" href="/fav.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/fav.ico/ms-icon-144x144.png">
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>Team 1</th>
-            <th>Team 2</th>
-        </tr>
-        <tr>
-            <td><div id="emulator1"></div></td>
-            <td><div id="emulator2"></div></td>
-        </tr>
-    </table>
+    <center>
+      <table>
+          <tr>
+              <th><div>Team 1</div></th>
+              <th><div>Team 2</div></th>
+          </tr>
+          <tr>
+              <td><div id="emulator1"></div></td>
+              <td><div id="emulator2"></div></td>
+          </tr>
+      </table>
+    </center>
 
     <script src="lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
@@ -40,7 +70,7 @@
                         ['LJ65', 'roms/lj65/lj65.nes'],
                     ],
                     "Working": [
-                        ['Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
+                        ['Super Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
                         ['Ice Climber', 'local-roms/Ice Climber (U).nes'],
                         ['Bubble Bobble', 'local-roms/Bubble Bobble (E).nes'],
                         ['Tetris', 'local-roms/Tetris (U).nes'],
@@ -57,7 +87,7 @@
                         ['LJ65', 'roms/lj65/lj65.nes'],
                     ],
                     "Working": [
-                        ['Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
+                        ['Super Mario Bros.', 'local-roms/Super Mario Bros (E).nes'],
                         ['Ice Climber', 'local-roms/Ice Climber (U).nes'],
                         ['Bubble Bobble', 'local-roms/Bubble Bobble (E).nes'],
                         ['Tetris', 'local-roms/Tetris (U).nes'],
